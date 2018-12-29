@@ -1,0 +1,1 @@
+pandoc --from=markdown+footnotes --bibliography=./bibDown.bib -N -V lang=nl -V documentclass=scrartcl -H $HOME/Documents/fonts.tex --pdf-engine=xelatex -o Taak\ 1.1\ -\ Down\ Syndrome\ deel\ 1.pdf Taak\ 1.1\ -\ Down\ Syndrome\ deel\ 1.md

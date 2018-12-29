@@ -1,0 +1,122 @@
+\documentclass{beamer}
+\usetheme[shownavsym]{AAUsimple}
+\usefonttheme{structurebold}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{hyperref}
+\usepackage{microtype}
+\definecolor{darkblue}{RGB}{33,26,82}
+\definecolor{lightblue}{RGB}{194,193,204}
+\usepackage{array,multirow, booktabs}%%Tabellenmaker 1.Array voor horizontale lijn en arraystretch, 2. Multirow en Multicolumn voor merging rijen en columnen respectievelijk, 3.Booktabs voor code commands in tabel.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gekleurde hyperlinks
+\newcommand{\chref}[2]{%
+	\href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}%
+}
+\title[PKU]{PKU - Nomenclatuur mutaties}
+
+\date{\today}
+
+\author[Edon Namani, et. al]
+{%
+	Edon Namani\\
+	\href{mailto:e.namani@student.rug.nl}{{\tt e.namani@student.rug.nl}}
+}
+
+\institute[%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+]
+{%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+
+}
+
+\pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/semper_invicta.pdf}
+\titlegraphic{%
+	\pgfuseimage{titlepagelogo}
+}
+
+\begin{document}
+% Titel
+{\aauwavesbg%
+	\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}}
+%%%%%%%%%%%%%%%
+
+%TOC
+\begin{frame}{Agenda}{}
+	\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%
+\section{nomenclatuur}
+\begin{frame}{Syntax}
+	Mutaties kunnen op zowel gen- als proteïnniveau worden weergeven. Het eerstgenoemde heeft betrekking op de nucleotidesequenctie en het laatstgenoemde op aminozuursequentie.
+	
+	\vspace{\baselineskip}
+	\centering
+		\begin{tikzpicture}
+			\node[fill=darkblue,text=white] {[niveau].[verandering op niveau]};
+		\end{tikzpicture}
+		\begin{itemize}
+		\item niveau
+			\begin{itemize}
+			\item c $\rightarrow$ gen
+			\item p $\rightarrow$ prote\"ine
+			\item g $\rightarrow$ genoom
+			\end{itemize}
+		\item verandering $\rightarrow$ missense, nonsense, frameshift, etc.
+		\end{itemize}
+	
+\end{frame}
+
+\subsection{Nummering van nucleotides}
+\begin{frame}{Nummering van nucleotides}
+	\begin{tikzpicture}[text=white,inner sep=0, annotation/.style={anchor=####1,fill=darkblue,inner sep=2pt},
+		annotation/.default=north]
+		\fill[gray] (0,0) rectangle (2,.5);
+		\fill[darkblue] (2,0) rectangle (5,.5);
+		\fill[lightblue] (5,0) rectangle (7,.5);
+		\fill[darkblue] (7,0) rectangle (9,.5);
+		\fill[gray] (9,0) rectangle (10.8,.5);
+		\node at (1,.25) {5'UTR};
+		\node at (3.5,.25) {Exon 1};
+		\node at (6,.25) {Intron 1};
+		\node at (8,.25) {Exon 2};
+		\node at (9.9,.25) {3'UTR};
+	\draw[very thick] (2,0) -- +(0,-1) node[annotation] {c.1} (1,0.5) -- +(0,1) node[annotation=south] {c.-10} (5,0) -- +(0,-1) node[annotation] {c.30}
+		(5.25,.5) -- + (0,1) node[annotation=south] {c.30+5} (6.75,.5) -- +(0,1) node[annotation=south] {c.31-5} (7,0) -- +(0,-1) node[annotation] {c.31} (9,0) -- +(0,-1) node[annotation] {c.50} (10,.5)  -- +(0,1) node[annotation=south] {c*10};
+\end{tikzpicture}
+\end{frame}
+
+\subsection{syntax van mutatie}
+\begin{frame}{Nucleotide $\rightarrow$ Prote\"ine}
+	\begin{tabular}{*3l}
+		\toprule
+		Mutatie & Nucleotide verandering & Prote\"ine verandering\\
+		\midrule
+		missense  & c.400A>C & p.Ile134Arg\\
+		nonsense  & c.101A>T & p.Phe134*\\
+		frameshift& c.400\_403del & p.Arg134Tyrfs*5\\
+		in-frame  & c.200\_202dup & p.Ala67dup\\
+		silent    & c.165A>G & p.Phe55=\\
+		splicing  & c.170+10T>G & p.?\\
+		\bottomrule
+	\end{tabular}
+\end{frame}
+
+{\aauwavesbg
+\begin{frame}[plain,noframenumbering]
+	\finalpage{\href{https://docs.google.com/presentation/d/1wWC_u3hx8rsNSXKGCjr6AD3-wVgjlJHiZjDQSCHe08o/edit\#slide=id.g421dd203c7_0_5}{Terug naar Google Slides}
+		}
+\end{frame}
+}
+\end{document}

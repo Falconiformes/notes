@@ -1,0 +1,11 @@
+---
+title: "CG Bijeenkomst 1 - Goede Dokter"
+author: "Edon Namani"
+date: "13 September, 2018"
+---
+
+Ongeveer acht jaar geleden werd ik door de huisarts verwezen naar MCL, aangezien hij niet wist wat mijn aanhoudende hoest veroorzaakte. Daar werd ik behandeld door een kinderlongarts. Hij was een grote norse man met in zijn witte jas allerlei instrumenten waarvan ik de naam en nut niet wist. Zijn spreekkamer zag er niet bepaald kindvriendelijk uit: witte muren, geen enkele kleurrijke poster. In eerste instantie vond ik het een beetje angstig om samen met hem in de kamer te zitten, ook al waren mijn ouders mee. Dit gevoel verdween al snel bij zijn verwelkoming in zijn spreekkamer. Niet alleen begroette hij mijn ouders maar ook mij in de trend van "Hey kerel, hoe gaat het?". Dit zette mij op mijn gemak. Hierdoor dachtte ik dat het longen luisteren, keel bekijken, röntgenfoto maken allemaal welwillend was. Ook werd mijn longcapaciteit getest. De arts maakte van het longcapaciteitsonderzoek naar mijn gevoel eerder een spelletje, want ik moest zo hard mogelijk uitblazen om op de computer afgebeelde in een buis zittende bal eruit te krijgen. Bij deze taak supporte hij me ook door bijvoorbeeld energiek en luid te zeggen door te gaan.
+
+Als kind vertelden mijn ouders mij niet mee te gaan met onbekende volwassen. Ze vertelden dat zij met mij allerlei slechte dingen zouden doen en dat ik mijn ouders nooit meer zou zien. Mijn ouders zijn mijn vertrouwelingen en alles wat ik van hun opgelegd kreeg, beschouwde ik als "het beste". Verder denk ik dat kwetsbaar zijn inherent is met kind zijn. Ik denk dat ik desktijds hier wel bewust van was, zeker tegenover arts met een dergelijk postuur.
+
+Deze ervaring met de kinderlongarts heeft me doen laten beseffen dat patiënten van verschillende leeftijden anders benaderd moeten worden. Ook al is iemand anders dan de patiënt de woordvoerder, het blijft belangrijk dat je ook communiceert met de patiënt zelf. Zo zou ik net als mijn kinderlongarts naast de ouders ook het kind, het patiënt, begroeten. Ook zou ik mijn denkwijze en handelingen aan het kind vertellen, weliswaar gesimplificeerd. Als ik bijvoorbeeld met de stethoscoop naar auscultaties luisteren zou, dan zou ik tegen het kind zeggen: "Met dit apparaat ga ik luisteren of ik geen rare, slechte geluidjes in je longen hoor".
