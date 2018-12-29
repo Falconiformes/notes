@@ -7,9 +7,11 @@
 *.bbl
 *.bbf
 *.blg
+*.bcf
 *.pdf
 *.swp
 *.nav
 *.snm
 *.toc
 *.vrb
+*.xd
