@@ -1,0 +1,6 @@
+- Il-2 activatie bij T-helper cellen en Tregs (TGF-β, IL-10, CTLA-4) → klassieke macrofaag inhibitie, promotie alternatieve macrofaag activatie, remming endotheel activatie, Il-2-stelen
+- APC-boost, inflammatie boost en Th-cellen (CD40-ligand -CD40) Il-12 ⇌ inf-γ Th1-cel -macrofaag
+- CTLA-4 productie van geactiveerde Th-cellen
+- PD-1 expressie Th-cellen
+- FcγRIIb → remming anti-lichaam productie
+- Complement systeem → a-subdelen promoten inflammatie → macrofagen recruitering → activatie via pamps bij ontstekingshaard → productie inflammatoire ytokinnen (IL-1, IL-6) → productie van complement proteïnen(CRP, pentraxin) door lever (verder opsonisatie → beter fagocytose → meer antigen-presentatie)

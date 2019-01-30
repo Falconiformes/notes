@@ -1,0 +1,174 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme[shownavsym]{AAUsimple}
+\usefonttheme{structurebold}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\definecolor{purple}{RGB}{33,26,82}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{microtype}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gekleurde hyperlinks
+\newcommand{\chref}[2]{%
+	\href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}%
+}
+\title[Beroepsallergie]{Casus 3: de 30-jarige kok}
+
+\date{\today}
+
+\author[Edon Namani, et. al]
+{%
+	Edon Namani --- Jolien Oud\\
+	\href{mailto:e.namani@student.rug.nl}{{\tt e.namani@student.rug.nl}} --- \href{mailto:j.oud.3@student.rug.nl}{{\tt j.oud.3@student.rug.nl}}
+}
+
+\institute[%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+]
+{%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+
+}
+
+\pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/semper_invicta.pdf}
+\titlegraphic{%
+	\pgfuseimage{titlepagelogo}
+}
+
+\begin{document}
+% Titel
+{\aauwavesbg%
+	\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}}
+%%%%%%%%%%%%%%%
+
+%TOC
+\begin{frame}{Agenda}{}
+	\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%
+\section{Beroepsziekte}
+\begin{frame}{Beroepsziekte}{Definitie}
+    \begin{alertblock}{Definitie}
+        Een beroepsziekte is een ziekte of aandoening als gevolg van een belasting die in overwegende mate in arbeid of arbeidsomstandigheden heeft plaatsgevonden.
+    \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+\section{Stappenplan constatering beroepseczeem}
+\begin{frame}{Stappenplan constatering beroepseczeem}
+    \onslide<1>{%
+        \begin{enumerate}
+        \item Diagnose van eczeem, uitsluiten van andere immiterende ziektes (dd)  
+        \item Via anamnese constateren dat excerbatie van eczeem optreedt bij werken\\
+              Ook statistische gegevens checken:
+              $$\text{Relatieve risico} = \frac{P(\text{eczeem}\, |\, \text{kok})}{P(\text{eczeem}\, |\, \text{geen kok})} > 2 $$
+        \item Constateren van aard, maat en duur blootstelling van de irriterend stoffen \& allergenen op werkplaats
+        \item Overschaduwende en verborgen niet-werk gerelateerde oorzaken 
+        \item Wel of niet beroepsziekte
+        \item Preventie
+       \end{enumerate}
+      }
+      \onslide<2>{%
+          \begin{tikzpicture}[%
+                            level distance=1.5cm,
+                            level 1/.style={sibling distance=3.5cm},
+                            level 2/.style={sibling distance=3.0cm},
+                            every node/.style={align=center, fill=purple, text=white},
+                            remember picture, overlay, thick, rounded corners,
+                            edge from parent fork down, 
+                            ]
+
+                            \node (1) at (current page.center) {Eczeem}
+                                                                        child {node (2) {Irritant contact\\ dermatitis}}
+                                                                        child {node (3) {Atopisch hand\\ dermatitis}
+                                                                            child {node (3a) {Proteïne contact\\ dermatitis}} 
+                                                                        }
+                                                                        child {node (4) {Allergisch contact\\ dermatitis}
+                                                                            child {node (4a) {Plaktest}}
+                                                                        }
+                                                                            child {node (5) {Imiterende eczeem}};
+                            \end{tikzpicture}
+      }
+\end{frame}
+%%%%%%%%%%%%%%%
+\section{Contact huisarts bedrijfsarts}
+\begin{frame}{Contact huisarts bedrijfsarts}
+Elke werkgever moet een bedrijfsarts in dienst hebben. De huisarts kan via de baas van zijn patiënt de bedrijfsarts contacteren.
+\end{frame}
+%%%%%%%%%%%%%%%
+\section{Arbeidsgeschiktheid}
+\begin{frame}{Arbeidsgeschiktheid}
+    \begin{block}{Ongeschikt --- pourquoi?}
+        Een hybride vorm van allergisch contact dermatitis en irritant contact dermatitis heeft een lage kans op remissie, ongeacht de preventieve maatregelen in de huidige functie als kok. Eczeem wordt gekenmerkt door schilfering van het huid. Deze schilfers komen terecht in de gerechten, bon appetit!
+
+        Verder zullen handschoenen het uitvoeren van fijn motoriek belemmeren.
+    \end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\section{Preventie}
+\begin{frame}{Preventie}{Behoud functie kok}
+    \begin{block}{Maatregelen}
+        \begin{enumerate}
+            \item Vermindering blootstelling aan irriterende stoffen \& allergenen
+                \begin{itemize}
+                    \item waterdichte vinyle katoen gevoerde handschoenen
+                    \item verzachtende zalven
+                \end{itemize}
+            \item Onderdrukking van immuunsysteem
+                \begin{itemize}
+                    \item corticosteroïden zalven \& calcineurin remmers
+                    \item Fototherapie
+                    \item Monoclonale anti-lichamen tegen cytokinen en receptoren $\rightarrow$ duur
+                \end{itemize}
+        \end{enumerate}
+    \end{block}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\begin{frame}{Preventie}{Andere functie}
+    \begin{block}{Maatregelen}
+        De beste oplossing ter voorkoming eczeem is vervulling van functie zonder blootstelling. Deze functies kunnen van de twee vormen zijn:
+            \begin{enumerate}
+                \item Eerste spoor $\rightarrow$ andere functie binnen huidige firma, bijv. ober
+                \item Tweede spoor $\rightarrow$ andere functie in een ander firma
+            \end{enumerate}
+            De werkgever van huidige firma moet bij beide sporen (financiële) ondersteuning bieden.
+    \end{block}
+\end{frame}
+%%%%%%%%%%%%%%%
+\section{Kosten}
+
+\begin{frame}{Kosten}{Werkgever}
+    \begin{enumerate}
+        \item Loondoorbetaling \& re-integratie $\rightarrow$ 2 jaar lang doorbetalen loon
+        \item Arbeidsgeneeskundige activiteiten, die leiden tot constatering beroepsziekte
+        \item Werkplaats aanpassingen 
+            \begin{itemize}
+                \item Speciale handschoenen
+                \item verzachtende zalven
+            \end{itemize}
+    \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{Kosten}{Kok}
+    \begin{enumerate}
+        \item Imuunonderdrukkende medicijnen \& therapie
+        \item Initiële diagnose van contacteczeem door huisarts of dermatoloog
+        \item WIA-uitkering
+    \end{enumerate}
+\end{frame}
+{\aauwavesbg
+\begin{frame}[plain,noframenumbering]
+    \finalpage{C'est finis!}
+\end{frame}}
+\end{document}
