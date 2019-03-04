@@ -1,0 +1,90 @@
+\documentclass{beamer}
+\usetheme[shownavsym]{AAUsimple}
+\usefonttheme{structurebold}
+\setbeamercolor{AAUsimple}{fg=white,bg=blue}
+\setbeamercolor{structure}{fg=white}
+\setbeamercolor{frametitle}{use=structure,fg=structure.fg}
+\setbeamercolor{normal text}{fg=black,bg=gray!20}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\tikzset{>=stealth}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{siunitx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gekleurde hyperlinks
+\newcommand{\chref}[2]{%
+	\href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}%
+}
+\title[Cardiologie]{Koppeling actiepotentiaal in hartcontractie }
+
+\date{\today}
+
+\author[Edon Namani, et. al]
+{%
+	%Edon Namani\\
+	%\href{mailto:e.namani@student.rug.nl}{{\tt e.namani@student.rug.nl}}
+}
+
+\institute[%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+]
+{%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+
+}
+
+\pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/semper_invicta.pdf}
+\titlegraphic{%
+	\pgfuseimage{titlepagelogo}
+}
+
+\begin{document}
+% Titel
+{\aauwavesbg%
+	\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}}
+%%%%%%%%%%%%%%%
+
+%TOC
+\begin{frame}{Agenda}{}
+	\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\begin{frame}{Actiepotentiaal cardiomyocyt}
+\begin{columns}
+        \column{.55\textwidth}
+        \begin{tikzpicture}[thick]
+        \draw (0,0) grid (4,4);
+		\foreach \y in {1,2,...,4}
+		\draw (1mm,\y) -- (-1mm,\y) node[anchor=east] {\y};
+		\foreach \x in {1,2,...,3}
+        \draw (\x,1mm) -- (\x,-1mm) node[anchor=north] {\x};
+        \coordinate (O) at (.5,0);
+        \coordinate (A) at (.5,3.5);
+        \coordinate (B) at (.75,3.25);
+        \coordinate (C) at (3,3);
+        \coordinate (D) at (4,0);
+        \draw[smooth] (O) -- (A) to[bend right] (B) .. controls (2.9,3.1) .. (C) -- (D)
+            ;
+    \end{tikzpicture}
+        \column{.45\textwidth}
+    \end{columns}
+\end{frame}
+
+{\aauwavesbg
+\begin{frame}[plain,noframenumbering]
+	\finalpage{Bedankt voor het aandachtig luisteren!}
+\end{frame}}
+\end{document}

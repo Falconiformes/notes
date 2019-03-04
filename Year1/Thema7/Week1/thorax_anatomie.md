@@ -1,0 +1,2 @@
+- 2 rib tot 6 rib → fissura oblique
+- 4 rib → fissura horizontalis

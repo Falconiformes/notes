@@ -1,0 +1,203 @@
+\documentclass{beamer}
+\usetheme[shownavsym]{AAUsimple}
+\usefonttheme{structurebold}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{siunitx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gekleurde hyperlinks
+\newcommand{\chref}[2]{%
+	\href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}%
+}
+\title[Fysiologie]{Cardiovasculair homeostase}
+
+\date{\today}
+
+\author[Edon Namani, et. al]
+{%
+	Edon Namani\\
+	\href{mailto:e.namani@student.rug.nl}{{\tt e.namani@student.rug.nl}}
+}
+
+\institute[%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+]
+{%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+
+}
+
+\pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/semper_invicta.pdf}
+\titlegraphic{%
+	\pgfuseimage{titlepagelogo}
+}
+
+\begin{document}
+% Titel
+{\aauwavesbg%
+	\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}}
+%%%%%%%%%%%%%%%
+
+%TOC
+\begin{frame}{Agenda}{}
+	\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%
+\section{Definitie homeostase}
+\begin{frame}{Definitie homeostase}
+    \begin{block}{Definitie}
+        Het lichaam houdt waardes van variabelen binnen een bepaald interval, bv. $[4.4, 6.1] \si{\milli\mol}$ (waarde-interval) bloedsuikerspiegel (variabel). De waarde van de variabel wordt gedetecteerd door een sensor. De hersenen checken of de waarde binnen het waarde-interval zit. Bij afwijkingen sturen de hersenen acties aan die de waarde weer doen herstellen.
+
+        De variabelen in het cardiovasculair systeem:
+        \begin{enumerate}
+            \item Arteriële druk, $P_a$
+            \item Veneuze overschot $\rightarrow \int (Q_{\text{terugkeer}} - Q_{\text{hart}}) dt$
+            \end{enumerate}
+    \end{block}
+\end{frame}
+\section{Verschil tussen arteriën en venen}
+\begin{frame}{Verschil tussen arteriën en venen}
+    \begin{columns}
+        \column{.5\textwidth}
+        \begin{block}{Arteriën}
+            \begin{itemize}
+                \item Functie $\rightarrow$ Verdelen van bloed
+                \item Lage compliantie
+                \item Hoge weerstand
+            \end{itemize}
+        \end{block}
+    \column{.5\textwidth}
+    \begin{block}{Venen}
+        \begin{itemize}
+            \item Functie $\rightarrow$ Verzamelen van bloed
+            \item Hoge compliantie $\rightarrow$ groot bloedvolume/reservoir
+            \item Lage weerstand
+        \end{itemize}
+    \end{block}
+    \end{columns}
+\end{frame}
+\section{Cardiovasculair homeostase lus}
+\begin{frame}{Cardiovasculair homeostase lus}{Soort van...}
+    \begin{tikzpicture}[every node/.style={align=center, minimum size=1cm},bluestyle/.style={text=white,fill=blue!50,draw=blue}]
+        \matrix[ampersand replacement=\&, column sep=.66cm, row sep=1cm] {
+            \& \& \& \node[bluestyle] (hypoxia) {Hypoxia}; \& \\ 
+            \node[bluestyle] (Vcompliantie) {$C_v$ | $V_{tot}$}; \&
+                \node[text=white,fill=red!50,draw=red] (Voverschot) {Veneus\\ overschot}; \&
+            \node[bluestyle] (CO) {$Q_{\text{hart}}$};
+            \& \node[bluestyle] (Vaterie) {Arteriële\\ overschot};
+            \& \node[bluestyle] (Resistentie) {$R_{perifeer}$};\\
+            % row 2
+                \& \node[bluestyle] (Pra) {$P_{ra}$}; 
+            \& \node[bluestyle] (Vslag) {$SV$}; 
+            \& \node[bluestyle] (freq) {$f_{\text{hart}}$};
+            \& \node[text=white,fill=red!50,draw=red] (AP) {$P_a$};\\
+        };
+    \begin{scope}[->,thick,>=stealth]
+        \draw[-|,red] (CO) -- (Voverschot);
+        \draw (CO) -- (Vaterie);
+        \draw (Voverschot) -- (Pra);
+        \draw (Vslag) -- (CO);
+        \draw (Pra) -- (Vslag);
+        \draw (Pra) -| (Vcompliantie) node[anchor=north,midway,text=beamer@normaltextcolor] {ANP};
+        \draw[-|,red] (Vcompliantie) -- (Voverschot);
+        \draw (freq.north west) -- (CO.south east);
+        \draw[-|,red] (AP) -- (freq);
+        \draw[-|,red] (AP) -- (Resistentie);
+        \draw (Resistentie) -- (Vaterie);
+        \draw (Vaterie.south east) -- (AP.north west);
+        \draw[-|,red] (hypoxia) -| (Resistentie);
+        \draw[-|,red] (Vaterie) -- (hypoxia);
+        \end{scope}
+    \end{tikzpicture}
+\end{frame}
+\section{Debiet-curves}
+\begin{frame}{Debiet-curves}{Veneuze terugkeer \& Hart debiet}
+    \only<1>{
+    \begin{columns}
+        \column{.45\textwidth}
+        \begin{tikzpicture}[>=stealth,thick]
+            \draw[<->] (0,5) node[anchor=south] {$Q_{terugkeer} $ (\si{\litre\per\minute})} -- ++(0,-5) -- (5,0) node[anchor=west] {$P_{ra}$ (mm Hg)};
+            \foreach \y/\t/\d in {0/0/-4,1/4/0,2/8/4,3/12/8,4/16/12}{
+                \draw (1mm,\y) -- (-1mm,\y) node[anchor=east] {\t};
+            \draw (\y,1mm) -- (\y,-1mm);
+                \node[anchor=north] at (\y,0) {\d};
+        }
+        \draw[rounded corners,beamer@headercolor] (0,1.4) -- ++(.8,0) -- ++(2.0,-1.4) node[fill=red,circle,inner sep=0.9] {};
+        \end{tikzpicture}
+        \column{.5\textwidth}
+        \begin{block}{Analyse grafiek}
+            \begin{itemize}
+            \item De rechte $\rightarrow \frac{1}{R_{perifeer}}$ 
+            \item Snijpunt met $P$-as geeft de groote van $C_v$ en $V_t$ aan.
+            \item Plateau $\rightarrow P_{ra} < P_{thoraxholte}$
+            \end{itemize}
+        \end{block}
+
+    \end{columns}
+}
+\only<2>{
+    \begin{columns}
+        \column{.45\textwidth}
+        \begin{tikzpicture}[>=stealth,thick]
+            \draw[<->] (0,5) node[anchor=south] {$Q_{hart} $ (\si{\litre\per\minute})} -- ++(0,-5) -- (5,0) node[anchor=west] {$P_{ra}$ (mm Hg)};
+            \foreach \y/\t/\d in {0/0/-4,1/4/0,2/8/4,3/12/8,4/16/12}{
+                \draw (1mm,\y) -- (-1mm,\y) node[anchor=east] {\t};
+            \draw (\y,1mm) -- (\y,-1mm);
+                \node[anchor=north] at (\y,0) {\d};
+        }
+        \draw[beamer@headercolor] (0,0) .. controls +(0:2) and +(180:5).. (4,4);
+        \end{tikzpicture}
+        \column{.5\textwidth}
+        \begin{block}{Analyse grafiek}
+            \begin{itemize}
+                \item Eind-diastolisch volume afhankelijk van $P_{transmuraal}$
+                \item Verandering maximum door (immiterende) sympathismus
+            \end{itemize}
+        \end{block}
+    \end{columns}
+}
+\only<3>{%
+    \begin{columns}
+        \column{.45\textwidth}
+        \begin{tikzpicture}[>=stealth,thick]
+            \draw[<->] (0,5) node[anchor=south] {$Q$ (\si{\litre\per\minute})} -- ++(0,-5) -- (5,0) node[anchor=west] {$P_{ra}$ (mm Hg)};
+            \foreach \y/\t/\d in {0/0/-4,1/4/0,2/8/4,3/12/8,4/16/12}{
+                \draw (1mm,\y) -- (-1mm,\y) node[anchor=east] {\t};
+            \draw (\y,1mm) -- (\y,-1mm);
+                \node[anchor=north] at (\y,0) {\d};
+        }
+        \draw[rounded corners,green] (0,1.4) -- ++(.8,0) -- ++(2.0,-1.4);
+        \draw[beamer@headercolor] (0,0) .. controls +(0:2) and +(180:5).. (4,4) node[pos=.393,circle,fill=red,inner sep=1.2] {};
+        \draw[blue,dashed] (0,0) .. controls +(0:1) and +(180:4).. (4,2) node[pos=.576,circle,fill=cyan,inner sep=1.2] (pos2) {};
+        \path (0,0) .. controls +(0:1) and +(180:4).. (4,2) node[pos=.470,circle,fill=cyan,inner sep=1.2] (pos1) {};
+        \draw (pos1) -| (pos2);
+        \end{tikzpicture}
+        \column{.5\textwidth}
+        \begin{block}{Analyse combi-grafiek}
+            \begin{itemize}
+                \item Op lange termijn $Q_{terugkeer} = Q_{hart}$
+            \item Bij hartfaal tijdelijk $Q_{terugkeer} > Q_{hart}$
+            \item $Q_{terugkeer}$ is immers afhankelijk van $Q_{hart}$
+            \end{itemize}
+        \end{block}
+    \end{columns}
+}
+\end{frame}
+{\aauwavesbg
+\begin{frame}[plain,noframenumbering]
+	\finalpage{ --- Gjithmon pafitu ---}
+\end{frame}}
+\end{document}

@@ -1,0 +1,134 @@
+\documentclass{beamer}
+\usetheme[shownavsym]{AAUsimple}
+\usefonttheme{structurebold}
+%\definecolor{BLUE}{RGB}{0,0,110}
+%\definecolor{light_BLUE}{RGB}{118,118,134}
+%\definecolor{CYAN}{RGB}{68,65,77}
+%\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+%\definecolor{UBCgrey}{rgb}{0.3686, 0.5255, 0.6235} % UBC Grey (secondary)
+%
+%%\setbeamercolor{palette primary}{bg=UBCblue,fg=white}
+%%\setbeamercolor{palette secondary}{bg=UBCblue,fg=white}
+%%\setbeamercolor{palette tertiary}{bg=UBCblue,fg=white}
+%%\setbeamercolor{palette quaternary}{bg=UBCblue,fg=white}
+%%\setbeamercolor{structure}{fg=UBCblue} % itemize, enumerate, etc
+%%\setbeamercolor{section in toc}{fg=UBCblue} % TOC sections
+%\setbeamercolor{structure}{fg=UBCblue}
+%\setbeamercolor{frametitle}{bg=UBCblue,fg=white}
+%\setbeamercolor{AAUsimple}{fg=UBCgrey,bg=UBCblue}
+%\setbeamercolor{normal text}{fg=CYAN}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{microtype}
+\tikzset{>=stealth}
+\usepackage{circuitikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gekleurde hyperlinks
+\newcommand{\chref}[2]{%
+	\href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}%
+}
+\title[Cardiologie]{Vloeistofdynamica in fysiologie}
+\date{\today} 
+\author[Edon Namani, et. al]
+{%
+	Edon Namani\\
+	\href{mailto:e.namani@student.rug.nl}{{\tt e.namani@student.rug.nl}}
+}
+
+\institute[%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+]
+{%
+	Faculteit Gezondheidswetenschappen\\
+	Rijksuniversiteit Groningen\\
+	Nederland
+
+}
+
+\pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/semper_invicta.pdf}
+\titlegraphic{%
+	\pgfuseimage{titlepagelogo}
+}
+
+\begin{document}
+% Titel
+{\aauwavesbg%
+	\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}}
+%%%%%%%%%%%%%%%
+
+%TOC
+\begin{frame}{Agenda}{}
+	\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%
+\section{Debiet}
+\begin{frame}{Debiet}
+    \begin{columns}
+        \column{.3\textwidth}
+        \begin{tikzpicture}[thick]
+            \usebeamercolor{frametitle}
+            \draw[dashed] (0,-.5) arc (-90:90:.25 and .5);
+            \draw (0,-.5) arc (270:90:.25 and .5);
+    \draw (0,-.5) -- (2.5,-.5);
+    \draw (0,.5) -- (2.5,.5);
+        \draw (2.5,0) ellipse (.25 and .5);
+        \draw[fill,draw=bg] (.5,.-.5) arc (-90:-270:.25 and .5) -- (1.5,.5) -- +(0,-1) -- (.5,-.5); 
+        \filldraw[bg] (1.5,0) ellipse (.25 and .5) node[fg] {$A$};
+        \draw[<->] (.5,-.75) -- +(1,0) node[midway, anchor=north] {$h$};
+        \draw[->] (1.75,0) -- +(.5,0) node[anchor=west] {$\vec{v}$};
+    \end{tikzpicture} 
+    \column{.7\textwidth} 
+    \only<1>{%
+    \begin{block}{Definitie}
+        Debiet ($Q$) is hoeveelheid bloed die per tijdseenheid een bepaald punt passeert. Mathematisch gedefinieerd:
+        \begin{equation*}
+            Q = \frac{dV}{dt} 
+        \end{equation*}
+        Hierin is:
+        \begin{itemize}
+            \item $V$ het volume
+            \item $t$ de tijd
+        \end{itemize}
+    \end{block}
+}
+\only<2>{%
+    \begin{block}{Relatie stroomsnelheid en debiet}
+         \begin{equation*}
+             Q = \frac{dV}{dt}=\frac{Adh}{dt}=Av 
+        \end{equation*}  
+        Voor elk categorie bloedvat, bv. capillairen, is $Q$ gelijk. Maar de dwarsdoorsnede oppervlakte is verschillend. Capillairen hebben de grootste $A$ en dus ook de laagste $v$.
+    \end{block}
+}
+\end{columns} 
+\end{frame}
+\section{Weerstand en Debiet}
+\begin{frame}{Weerstand \& Debiet}
+     Debiet is proportioneel met het drukverschil tussen twee verschillende punten en invers proportioneel met de weerstand tussen deze twee punten:
+     \begin{equation*}
+         Q = \frac{\Delta P}{R} \rightarrow \frac{\pi\Delta P r^4}{8\eta l}
+     \end{equation*}
+     Bloed stroomt door parallelle en in serie staande weerstanden/bloedvaten. 
+
+     \alert{$R$ voor serie}:
+     \begin{equation*}
+         R_{\text{tot}} = \sum_{i=1}^{n} R
+     \end{equation*}
+     \alert{$R$ voor parallel}:
+     \begin{equation*}
+         \frac{1}{R_{\text{tot}}} = \sum_{i=1}^{n} \frac{1}{R}
+     \end{equation*}
+ \end{frame}
+{\aauwavesbg
+\begin{frame}[plain,noframenumbering]
+    \finalpage{C'est finit}
+\end{frame}}
+\end{document}
